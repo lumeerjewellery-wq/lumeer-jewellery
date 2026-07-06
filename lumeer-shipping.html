@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shipping — Lumeer Jewellery</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #F7F4EF;
+    --white: #FFFFFF;
+    --gray-light: #EEEBE5;
+    --gray-mid: #C8C0B4;
+    --gray: #9E9488;
+    --brown-light: #7A6A5A;
+    --brown: #4A3728;
+    --brown-dark: #2C1F14;
+    --gold: #B8976A;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .header {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-light);
+    padding: 20px 24px 18px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .header-brand {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 4px;
+    font-weight: 400;
+  }
+  .header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--brown);
+    letter-spacing: 0.08em;
+  }
+
+  .hero {
+    background: var(--brown-dark);
+    padding: 52px 28px 44px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 80%, rgba(184,151,106,0.12) 0%, transparent 65%);
+  }
+  .hero-label {
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1;
+    letter-spacing: 0.06em;
+    margin-bottom: 20px;
+  }
+  .hero-sub {
+    font-size: 13px;
+    color: rgba(247,244,239,0.55);
+    line-height: 1.7;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  /* CONTENT */
+  .content {
+    padding: 36px 24px 56px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* FREE SHIPPING BANNER */
+  .free-banner {
+    background: var(--brown);
+    border-radius: 2px;
+    padding: 20px 24px;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .free-banner-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .free-banner-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 10px;
+    letter-spacing: 0.04em;
+  }
+  .free-banner-text {
+    font-size: 13px;
+    color: rgba(247,244,239,0.65);
+    line-height: 1.7;
+  }
+  .free-banner-text strong {
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  /* SHIPPING DAYS */
+  .shipping-days {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 2px;
+    padding: 16px 20px;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .shipping-days-text {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  .shipping-days-text strong {
+    color: var(--brown);
+    font-weight: 500;
+  }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--brown);
+    margin-bottom: 4px;
+    letter-spacing: 0.04em;
+  }
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .section-sub {
+    font-size: 13px;
+    color: var(--brown-light);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  /* TABLE */
+  .ship-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+    border: 1px solid var(--gray-light);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .ship-table thead tr {
+    background: var(--brown-dark);
+  }
+  .ship-table th {
+    padding: 12px 16px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--cream);
+    text-align: left;
+  }
+  .ship-table th:last-child { text-align: right; }
+  .ship-table td {
+    padding: 14px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--gray-light);
+    color: var(--brown);
+    background: var(--white);
+  }
+  .ship-table td:last-child {
+    font-weight: 500;
+    color: var(--brown);
+    text-align: right;
+  }
+  .ship-table tr:last-child td { border-bottom: none; }
+  .ship-table tr:nth-child(even) td { background: var(--cream); }
+
+  .cod-note {
+    font-size: 11px;
+    color: var(--gray);
+    margin-top: 3px;
+    display: block;
+  }
+
+  /* PROCESS */
+  .process-box {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 2px;
+    padding: 20px;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  .process-box-title {
+    font-size: 13px;
+    color: var(--brown-light);
+    line-height: 1.7;
+  }
+  .process-box-title strong {
+    color: var(--brown);
+    font-weight: 500;
+  }
+
+  footer {
+    background: var(--brown-dark);
+    text-align: center;
+    padding: 32px 24px;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: rgba(247,244,239,0.6);
+    margin-bottom: 6px;
+  }
+  footer p {
+    font-size: 11px;
+    color: rgba(247,244,239,0.3);
+    letter-spacing: 0.08em;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-brand">Lumeer Jewellery</div>
+  <div class="header-title">Shipping & Delivery</div>
+</div>
+
+<div class="hero">
+  <div class="hero-label">We Deliver To You</div>
+  <div class="hero-title">SHIPPING<br>& DELIVERY</div>
+  <div class="hero-sub">Fast, reliable shipping across Malaysia, Singapore and beyond.</div>
+</div>
+
+<div class="content">
+
+  <!-- FREE SHIPPING -->
+  <div class="free-banner">
+    <div class="free-banner-label">Free Shipping</div>
+    <div class="free-banner-title">Free Shipping Available!</div>
+    <div class="free-banner-text">
+      Orders <strong>RM99 and above</strong> for West Malaysia<br>
+      Orders <strong>RM129 and above</strong> for East Malaysia
+    </div>
+  </div>
+
+  <!-- SHIPPING DAYS -->
+  <div class="shipping-days">
+    <div class="shipping-days-text">Shipping Days: <strong>Monday – Friday</strong></div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="process-box">
+    <div class="process-box-title">All orders ship within <strong>1–3 days</strong> after payment is confirmed.</div>
+  </div>
+
+  <!-- SHIPPING FEE -->
+  <div class="section-label">Fees</div>
+  <div class="section-title">Shipping Fee</div>
+  <div class="section-sub">Rates based on destination.</div>
+
+  <table class="ship-table">
+    <thead>
+      <tr>
+        <th>Destination</th>
+        <th>Fee</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>West Malaysia</td>
+        <td>RM 8</td>
+      </tr>
+      <tr>
+        <td>East Malaysia</td>
+        <td>RM 15</td>
+      </tr>
+      <tr>
+        <td>Singapore</td>
+        <td>RM 45</td>
+      </tr>
+      <tr>
+        <td>Other Countries</td>
+        <td>DM Us</td>
+      </tr>
+      <tr>
+        <td>
+          COD — Pulau Pinang Only
+          <span class="cod-note">(Island: Bayan Lepas Area, Karpal Singh Drive)</span>
+        </td>
+        <td>Available</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- DELIVERY TIME -->
+  <div class="section-label">Estimated Time</div>
+  <div class="section-title">Delivery Time</div>
+  <div class="section-sub">Working days after order is shipped.</div>
+
+  <table class="ship-table">
+    <thead>
+      <tr>
+        <th>Destination</th>
+        <th>Estimated</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>West Malaysia</td>
+        <td>2–3 Working Days</td>
+      </tr>
+      <tr>
+        <td>East Malaysia</td>
+        <td>3–5 Working Days</td>
+      </tr>
+      <tr>
+        <td>Singapore</td>
+        <td>5–7 Working Days</td>
+      </tr>
+      <tr>
+        <td>International</td>
+        <td>7–14 Working Days</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<footer>
+  <div class="footer-logo">LUMEER</div>
+  <p>@lumeerjewellery</p>
+</footer>
+
+</body>
+</html>
