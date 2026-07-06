@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Material Guide — Lumeer Jewellery</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #F7F4EF;
+    --white: #FFFFFF;
+    --gray-light: #EEEBE5;
+    --gray-mid: #C8C0B4;
+    --gray: #9E9488;
+    --brown-light: #7A6A5A;
+    --brown: #4A3728;
+    --brown-dark: #2C1F14;
+    --gold: #B8976A;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .header {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-light);
+    padding: 20px 24px 18px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .header-brand {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 4px;
+    font-weight: 400;
+  }
+  .header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--brown);
+    letter-spacing: 0.08em;
+  }
+
+  .hero {
+    background: var(--brown-dark);
+    padding: 52px 28px 44px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 80%, rgba(184,151,106,0.12) 0%, transparent 65%);
+  }
+  .hero-label {
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1;
+    letter-spacing: 0.06em;
+    margin-bottom: 20px;
+  }
+  .hero-sub {
+    font-size: 13px;
+    color: rgba(247,244,239,0.55);
+    line-height: 1.7;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  /* GRID */
+  .grid-wrap {
+    padding: 36px 20px 56px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .mat-item {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .mat-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    background: var(--gray-light);
+  }
+
+  /* placeholder colour blocks instead of real images */
+  .mat-img-block {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: block;
+  }
+
+  .mat-info {
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--gray-mid);
+    flex-shrink: 0;
+  }
+
+  .mat-name {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brown);
+    line-height: 1.3;
+  }
+
+  .mat-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+  .dot-gold { background: #C9A96E; }
+  .dot-vermeil { background: #A07830; }
+  .dot-rose { background: #D4917B; }
+  .dot-brass { background: #B8964E; }
+  .dot-steel { background: #7A8A8E; }
+  .dot-cz { background: #D0E8F0; border: 1px solid #9BA4AB; }
+  .dot-sterling { background: #A8B8C0; }
+  .dot-white { background: #D8D8D8; border: 1px solid #9BA4AB; }
+
+  /* colour gradient blocks simulating material textures */
+  .bg-gold { background: linear-gradient(135deg, #e8c97a, #b8872a, #e8c97a, #9a6a10); }
+  .bg-vermeil { background: linear-gradient(135deg, #d4a84b, #8a5c1a, #c49030, #7a4c0a); }
+  .bg-rose { background: linear-gradient(135deg, #e8b4a0, #c07060, #e0a090, #b06050); }
+  .bg-brass { background: linear-gradient(135deg, #d4b060, #a07820, #c8a048, #906810); }
+  .bg-steel { background: linear-gradient(135deg, #c8d0d4, #8090a0, #b0bcc4, #687888); }
+  .bg-cz { background: linear-gradient(135deg, #e0f0f8, #a8c8e0, #d0e8f4, #88b0d0); }
+  .bg-sterling { background: linear-gradient(135deg, #d0d8e0, #8898a8, #c0ccd8, #788898); }
+  .bg-white { background: linear-gradient(135deg, #e8eaec, #b0b8c0, #d8dce0, #9098a8); }
+
+  footer {
+    background: var(--brown-dark);
+    text-align: center;
+    padding: 32px 24px;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: rgba(247,244,239,0.6);
+    margin-bottom: 6px;
+  }
+  footer p {
+    font-size: 11px;
+    color: rgba(247,244,239,0.3);
+    letter-spacing: 0.08em;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-brand">Lumeer Jewellery</div>
+  <div class="header-title">Material Guide</div>
+</div>
+
+<div class="hero">
+  <div class="hero-label">What We Use</div>
+  <div class="hero-title">OUR<br>MATERIALS</div>
+  <div class="hero-sub">Every Lumeer piece is crafted with intention — here's what goes into your jewellery.</div>
+</div>
+
+<div class="grid-wrap">
+  <div class="grid">
+
+    <div class="mat-item">
+      <div class="mat-img-block bg-gold"></div>
+      <div class="mat-info">
+        <span class="mat-num">01</span>
+        <span class="mat-name">Gold Plated</span>
+        <span class="mat-dot dot-gold"></span>
+      </div>
+    </div>
+
+    <div class="mat-item">
+      <div class="mat-img-block bg-vermeil"></div>
+      <div class="mat-info">
+        <span class="mat-num">02</span>
+        <span class="mat-name">Gold Vermeil</span>
+        <span class="mat-dot dot-vermeil"></span>
+      </div>
+    </div>
+
+    <div class="mat-item">
+      <div class="mat-img-block bg-rose"></div>
+      <div class="mat-info">
+        <span class="mat-num">03</span>
+        <span class="mat-name">Rose Gold Plated</span>
+        <span class="mat-dot dot-rose"></span>
+      </div>
+    </div>
+
+    <div class="mat-item">
+      <div class="mat-img-block bg-brass"></div>
+      <div class="mat-info">
+        <span class="mat-num">04</span>
+        <span class="mat-name">Brass</span>
+        <span class="mat-dot dot-brass"></span>
+      </div>
+    </div>
+
+    <div class="mat-item">
+      <div class="mat-img-block bg-steel"></div>
+      <div class="mat-info">
+        <span class="mat-num">05</span>
+        <span class="mat-name">Stainless Steel</span>
+        <span class="mat-dot dot-steel"></span>
+      </div>
+    </div>
+
+    <div class="mat-item">
+      <div class="mat-img-block bg-cz"></div>
+      <div class="mat-info">
+        <span class="mat-num">06</span>
+        <span class="mat-name">Cubic Zirconia</span>
+        <span class="mat-dot dot-cz"></span>
+      </div>
+    </div>
+
+    <div class="mat-item">
+      <div class="mat-img-block bg-sterling"></div>
+      <div class="mat-info">
+        <span class="mat-num">07</span>
+        <span class="mat-name">Sterling Silver</span>
+        <span class="mat-dot dot-sterling"></span>
+      </div>
+    </div>
+
+    <div class="mat-item">
+      <div class="mat-img-block bg-white"></div>
+      <div class="mat-info">
+        <span class="mat-num">08</span>
+        <span class="mat-name">White Gold Plated</span>
+        <span class="mat-dot dot-white"></span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">LUMEER</div>
+  <p>@lumeerjewellery</p>
+</footer>
+
+</body>
+</html>
