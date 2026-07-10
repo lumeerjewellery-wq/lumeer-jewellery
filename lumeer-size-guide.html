@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Size Guide — Lumeer Jewellery</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #FAFAFA;
+    --white: #FFFFFF;
+    --gray-light: #EFEFEF;
+    --gray-mid: #D0CBCA;
+    --gray: #A09890;
+    --brown-light: #8C7B6E;
+    --brown: #6B4F3A;
+    --brown-dark: #3E2A1E;
+    --gold: #B8976A;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .header {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-light);
+    padding: 20px 24px 18px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .header-brand {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 4px;
+    font-weight: 400;
+  }
+  .header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--brown);
+    letter-spacing: 0.08em;
+  }
+
+  .hero {
+    background: #F0EBE5;
+    padding: 52px 28px 44px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 80%, rgba(184,151,106,0.08) 0%, transparent 65%);
+  }
+  .hero-label {
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--brown-dark);
+    line-height: 1;
+    letter-spacing: 0.06em;
+    margin-bottom: 20px;
+  }
+  .hero-sub {
+    font-size: 13px;
+    color: var(--brown-light);
+    line-height: 1.7;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .content {
+    padding: 36px 24px 56px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* SECTION */
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--brown);
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  /* STEPS */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+  .step-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 2px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 32px;
+  }
+  .step-body {}
+  .step-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--brown);
+    margin-bottom: 2px;
+    letter-spacing: 0.02em;
+  }
+  .step-desc {
+    font-size: 12px;
+    color: var(--brown-light);
+    line-height: 1.6;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--gray-light);
+    margin: 32px 0;
+  }
+
+  /* RING TABLE */
+  .ring-note {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 2px;
+    padding: 14px 18px;
+    font-size: 12px;
+    color: var(--brown-light);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .ring-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--gray-light);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .ring-table thead tr {
+    background: #F0EBE5;
+  }
+  .ring-table th {
+    padding: 12px 16px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--brown-dark);
+    text-align: center;
+  }
+  .ring-table td {
+    padding: 11px 16px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--gray-light);
+    color: var(--brown);
+    background: var(--white);
+    text-align: center;
+  }
+  .ring-table tr:nth-child(even) td { background: var(--cream); }
+  .ring-table tr:last-child td { border-bottom: none; }
+
+  .ring-cta {
+    background: var(--brown);
+    border-radius: 2px;
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(247,244,239,0.7);
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+  .ring-cta strong { color: var(--gold); font-weight: 500; }
+
+  footer {
+    background: #F0EBE5;
+    text-align: center;
+    padding: 32px 24px;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: #3E2A1E;
+    margin-bottom: 6px;
+  }
+  footer p {
+    font-size: 11px;
+    color: #8C7B6E;
+    letter-spacing: 0.08em;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-brand">Lumeer Jewellery</div>
+  <div class="header-title">Size Guide</div>
+</div>
+
+<div class="hero">
+  <div class="hero-label">Find Your Fit</div>
+  <div class="hero-title">SIZE<br>GUIDE</div>
+  <div class="hero-sub">How to measure your wrist, hand and ring size for the perfect fit.</div>
+</div>
+
+<div class="content">
+
+  <!-- WRIST SIZE -->
+  <div class="section-label">Wrist Size</div>
+  <div class="section-title">How To Measure<br>Your Wrist</div>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Wrap</div>
+        <div class="step-desc">Wrap a string around your wrist to your desired fit.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Measure</div>
+        <div class="step-desc">Lay the string flat and measure it with a ruler.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Record & DM Us</div>
+        <div class="step-desc">Write down the length and DM us for more info.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- HAND SIZE -->
+  <div class="section-label">Hand / Bracelet Size</div>
+  <div class="section-title">How To Measure<br>Your Hand</div>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Position</div>
+        <div class="step-desc">Position your hand as if you were wearing a bracelet. Tuck your thumb into your palm.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Measure</div>
+        <div class="step-desc">Measure the exact circumference of your hand by passing the string around your knuckles.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Size Up</div>
+        <div class="step-desc">We recommend that you size up for a more comfortable fit.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- RING SIZE -->
+  <div class="section-label">Ring Size</div>
+  <div class="section-title">How To Measure<br>Your Ring Size</div>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Wrap</div>
+        <div class="step-desc">Wrap a string around your finger at the desired fit.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Mark</div>
+        <div class="step-desc">Mark where the string overlaps.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Measure</div>
+        <div class="step-desc">Measure the length up to the mark using a ruler.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-title">Find Your Size</div>
+        <div class="step-desc">Use your measurement and the chart below to find your ideal ring fit.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RING SIZE CHART -->
+  <div class="section-label">Ring Size Chart</div>
+  <div class="section-title">Size Chart</div>
+
+  <div class="ring-note">Kindly provide your ring size when placing a ring order. Don't hesitate to DM us if you're unsure — we're happy to help!</div>
+
+  <table class="ring-table">
+    <thead>
+      <tr>
+        <th>CM</th>
+        <th>HK</th>
+        <th>US</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>4.90</td><td>8</td><td>4</td></tr>
+      <tr><td>5.20</td><td>9</td><td>4.5</td></tr>
+      <tr><td>5.60</td><td>10</td><td>5.00</td></tr>
+      <tr><td>5.90</td><td>11</td><td>5.25</td></tr>
+      <tr><td>6.20</td><td>12</td><td>5.75</td></tr>
+      <tr><td>6.60</td><td>13</td><td>6</td></tr>
+      <tr><td>7.00</td><td>14</td><td>6.25</td></tr>
+      <tr><td>7.30</td><td>15</td><td>7</td></tr>
+      <tr><td>7.60</td><td>16</td><td>7.25</td></tr>
+      <tr><td>8.00</td><td>17</td><td>8</td></tr>
+      <tr><td>8.40</td><td>18</td><td>8.25</td></tr>
+      <tr><td>8.70</td><td>19</td><td>8.75</td></tr>
+      <tr><td>9.00</td><td>20</td><td>9</td></tr>
+    </tbody>
+  </table>
+
+  <div class="ring-cta">
+    Still unsure about your size? <strong>DM us on Instagram</strong> — we're happy to help you find the perfect fit!
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">LUMEER</div>
+  <p>@lumeerjewellery</p>
+</footer>
+
+</body>
+</html>
