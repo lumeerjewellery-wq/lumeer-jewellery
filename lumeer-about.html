@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Lumeer Jewellery</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #FAFAFA;
+    --white: #FFFFFF;
+    --gray-light: #EFEFEF;
+    --gray-mid: #D0CBCA;
+    --gray: #A09890;
+    --brown-light: #8C7B6E;
+    --brown: #6B4F3A;
+    --brown-dark: #3E2A1E;
+    --gold: #B8976A;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .header {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-light);
+    padding: 20px 24px 18px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .header-brand {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 4px;
+    font-weight: 400;
+  }
+  .header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--brown);
+    letter-spacing: 0.08em;
+  }
+
+  /* HERO */
+  .hero {
+    background: #F0EBE5;
+    padding: 64px 28px 52px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 80%, rgba(184,151,106,0.08) 0%, transparent 65%);
+  }
+  .hero-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .hero-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 14vw, 80px);
+    font-weight: 300;
+    color: var(--brown-dark);
+    letter-spacing: 0.1em;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  .hero-tagline {
+    font-size: 13px;
+    color: var(--brown-light);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  /* CONTENT */
+  .content {
+    padding: 48px 24px 64px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* BRAND STORY */
+  .story-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .story-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--brown-dark);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
+  }
+
+  .story-text {
+    font-size: 14px;
+    color: var(--brown-light);
+    line-height: 1.9;
+    margin-bottom: 16px;
+  }
+
+  .story-highlight {
+    background: var(--white);
+    border-left: 2px solid var(--gold);
+    padding: 16px 20px;
+    margin: 24px 0;
+    border-radius: 0 2px 2px 0;
+  }
+  .story-highlight p {
+    font-size: 14px;
+    color: var(--brown);
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  /* DIVIDER */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 40px 0;
+  }
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--gray-light);
+  }
+  .divider-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* FOUNDER */
+  .founder-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .founder-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--brown-dark);
+    line-height: 1.1;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  .founder-text {
+    font-size: 14px;
+    color: var(--brown-light);
+    line-height: 1.9;
+    margin-bottom: 16px;
+  }
+
+  .founder-text em {
+    color: var(--brown);
+    font-style: italic;
+  }
+
+  .founder-sign {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray-light);
+    text-align: right;
+  }
+  .founder-sign p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--brown);
+    letter-spacing: 0.06em;
+    font-style: italic;
+  }
+  .founder-sign span {
+    font-size: 11px;
+    color: var(--gray);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 2px;
+  }
+
+  footer {
+    background: #F0EBE5;
+    border-top: 1px solid var(--gray-light);
+    text-align: center;
+    padding: 32px 24px;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: #3E2A1E;
+    margin-bottom: 6px;
+  }
+  footer p {
+    font-size: 11px;
+    color: #8C7B6E;
+    letter-spacing: 0.08em;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-brand">Lumeer Jewellery</div>
+  <div class="header-title">About Us</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Est. Penang, Malaysia</div>
+  <div class="hero-logo">LUMeeR</div>
+  <div class="hero-tagline">Crafted to shine. Made to last.</div>
+</div>
+
+<div class="content">
+
+  <!-- BRAND STORY -->
+  <div class="story-label">Who We Are</div>
+  <div class="story-title">Our Story</div>
+
+  <p class="story-text">LUMeeR Jewellery bridges elegance and accessibility. Our pieces are affordable yet refined — making it possible for anyone who loves jewellery to wear something beautiful without overspending.</p>
+
+  <p class="story-text">Each piece is designed to enhance, not overshadow — the natural beauty of the wearer, allowing everyone to shine in their own unique way.</p>
+
+  <div class="story-highlight">
+    <p>We believe jewellery deserves its own space. That's why we created a focused destination where you can explore gold, silver, and everything in between.</p>
+  </div>
+
+  <p class="story-text">From classic gold-plated pieces and durable stainless steel, to rose gold finishes, gold vermeil on sterling silver, and pure 925 silver — everything is in one place, for you.</p>
+
+  <!-- DIVIDER -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-dot"></div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- FROM THE FOUNDER -->
+  <div class="founder-label">From the Founder</div>
+  <div class="founder-title">A Note From Us</div>
+
+  <p class="founder-text">Jewellery, to us, has always been about <em>this moment.</em></p>
+
+  <p class="founder-text">Not forever. Not perfection. Just the feeling of putting something on and thinking — yes, this is exactly what we wanted today.</p>
+
+  <p class="founder-text">We started Lumeer because we believe jewellery is fashion. It's self-expression. There are no rules about what "goes together" or what's "appropriate" — if it makes you feel beautiful, that's the only opinion that matters.</p>
+
+  <p class="founder-text">Will pieces fade over time? Yes. Will you fall out of love with a style eventually? Probably. But that's not a flaw — that's just life. What matters is the joy it brings you <em>right now</em>, the way it completes an outfit, the way it makes you feel seen.</p>
+
+  <p class="founder-text">That's also why we keep Lumeer affordable — not because quality doesn't matter, but because we want you to have <em>options.</em> To mix, to match, to experiment. To grab that delicate necklace for Monday, a bold chain for Friday, and something sparkly just because. Fashion is more fun when you're not choosing between pieces — when you can have them all.</p>
+
+  <p class="founder-text">Jewellery doesn't need to last forever to mean something. It just needs to make today feel a little more like <em>you.</em></p>
+
+  <div class="founder-sign">
+    <p>Lumeer Jewellery</p>
+    <span>@lumeerjewellery</span>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">LUMEER</div>
+  <p>@lumeerjewellery</p>
+</footer>
+
+</body>
+</html>
