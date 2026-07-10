@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Policy — Lumeer Jewellery</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #FAFAFA;
+    --white: #FFFFFF;
+    --gray-light: #EFEFEF;
+    --gray-mid: #D0CBCA;
+    --gray: #A09890;
+    --brown-light: #8C7B6E;
+    --brown: #6B4F3A;
+    --brown-dark: #3E2A1E;
+    --gold: #B8976A;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .header {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-light);
+    padding: 20px 24px 18px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .header-brand {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 4px;
+    font-weight: 400;
+  }
+  .header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--brown);
+    letter-spacing: 0.08em;
+  }
+
+  .hero {
+    background: #F0EBE5;
+    padding: 52px 28px 44px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 80%, rgba(184,151,106,0.08) 0%, transparent 65%);
+  }
+  .hero-label {
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--brown-dark);
+    line-height: 1;
+    letter-spacing: 0.06em;
+    margin-bottom: 20px;
+  }
+  .hero-sub {
+    font-size: 13px;
+    color: var(--brown-light);
+    line-height: 1.7;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .content {
+    padding: 36px 24px 56px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--brown);
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  /* POLICY ITEMS */
+  .policy-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .policy-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 2px;
+    padding: 18px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .policy-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    margin-top: 8px;
+  }
+
+  .policy-text {
+    font-size: 13px;
+    color: var(--brown-light);
+    line-height: 1.7;
+  }
+
+  .policy-text strong {
+    color: var(--brown);
+    font-weight: 500;
+  }
+
+  .policy-text em {
+    color: var(--brown);
+    font-style: italic;
+  }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: var(--brown-dark);
+    border-radius: 2px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  .highlight-box p {
+    font-size: 13px;
+    color: rgba(250,248,245,0.75);
+    line-height: 1.7;
+    font-style: italic;
+  }
+  .highlight-box strong {
+    color: var(--gold);
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--gray-light);
+    margin: 28px 0;
+  }
+
+  /* PAYMENT */
+  .payment-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 2px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+
+  .pay-letter {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--brown-dark);
+    color: #FAFAFA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 500;
+    flex-shrink: 0;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .pay-text {
+    font-size: 14px;
+    color: var(--brown);
+  }
+
+  .pay-note {
+    background: var(--gray-light);
+    border-radius: 2px;
+    padding: 14px 18px;
+    font-size: 12px;
+    color: var(--brown-light);
+    line-height: 1.6;
+    margin-top: 4px;
+    text-align: center;
+  }
+  .pay-note strong { color: var(--brown); font-weight: 500; }
+
+  footer {
+    background: #F0EBE5;
+    border-top: 1px solid var(--gray-light);
+    text-align: center;
+    padding: 32px 24px;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: #3E2A1E;
+    margin-bottom: 6px;
+  }
+  footer p {
+    font-size: 11px;
+    color: #8C7B6E;
+    letter-spacing: 0.08em;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-brand">Lumeer Jewellery</div>
+  <div class="header-title">Policy & Payment</div>
+</div>
+
+<div class="hero">
+  <div class="hero-label">Good To Know</div>
+  <div class="hero-title">POLICY &<br>PAYMENT</div>
+  <div class="hero-sub">Please read through our policies before placing an order.</div>
+</div>
+
+<div class="content">
+
+  <!-- RETURN POLICY PT.1 -->
+  <div class="section-label">Return & Refund</div>
+  <div class="section-title">Our Policy</div>
+
+  <div class="policy-list">
+
+    <div class="policy-card">
+      <div class="policy-dot"></div>
+      <div class="policy-text">
+        <strong>No returns or refunds</strong> are offered unless under special conditions.
+      </div>
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-dot"></div>
+      <div class="policy-text">
+        Size can only be made <strong>smaller, not larger</strong> — and not all designs are eligible for size changes.
+      </div>
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-dot"></div>
+      <div class="policy-text">
+        All details must be <strong>verified before finalizing payment</strong>, especially for customized items and ring sizes.
+      </div>
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-dot"></div>
+      <div class="policy-text">
+        All important information is clearly outlined in the product captions — please ensure <strong>everything is accurate before purchasing</strong>.
+      </div>
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-dot"></div>
+      <div class="policy-text">
+        Limited repair services are available, <em>depending on the issue</em>.
+      </div>
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-dot"></div>
+      <div class="policy-text">
+        Customers are <strong>required to pay</strong> for shipping costs for any repair services or exchanges.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="highlight-box">
+    <p>For any questions, repairs or size exchanges — <strong>DM or E-mail us directly.</strong> We're happy to help! ♡</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PAYMENT -->
+  <div class="section-label">How To Pay</div>
+  <div class="section-title">Payment Methods</div>
+
+  <div class="payment-card">
+    <div class="pay-letter">A</div>
+    <div class="pay-text">Online Bank Transfer</div>
+  </div>
+
+  <div class="payment-card">
+    <div class="pay-letter">B</div>
+    <div class="pay-text">QR Code, E-Wallets (TNG)</div>
+  </div>
+
+  <div class="payment-card">
+    <div class="pay-letter">C</div>
+    <div class="pay-text">Wise (International)</div>
+  </div>
+
+  <div class="pay-note" style="margin-top:16px;">
+    Kindly request quotations and bank details <strong>only when you are ready to proceed with payment.</strong>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">LUMEER</div>
+  <p>@lumeerjewellery</p>
+</footer>
+
+</body>
+</html>
